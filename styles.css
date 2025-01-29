@@ -1,204 +1,218 @@
+/* Reset básico e estilos globais */
 * {
+    margin: 0;
+    padding: 0;
     box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
 }
 
 body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #f4f4f4;
+    line-height: 1.6;
+    color: #333;
 }
 
+/* Header */
 header {
-    background-color: #4CAF50;
-    color: white;
-    padding: 10px 0;
-    text-align: center;
+    background: #007bff;
+    padding: 1rem;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
 
-header .logo h1 {
-    margin: 10px 0;
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    color: white;
+    margin-bottom: 1rem;
+}
+
+.logo img {
+    max-width: 60px;
 }
 
 nav ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
     display: flex;
-    justify-content: center;
+    gap: 1rem;
+    list-style: none;
     flex-wrap: wrap;
 }
 
-nav ul li {
-    margin: 5px 10px;
-}
-
-nav ul li a {
+nav a {
     color: white;
     text-decoration: none;
-    font-weight: bold;
+    padding: 0.5rem;
+    transition: color 0.3s;
 }
 
+nav a:hover {
+    color: #cce6ff;
+}
+
+/* Hero */
 .hero img {
-    color: white;
-    text-align: center;
     width: 100%;
     height: auto;
-    background-size: cover;
-    background-position: center;
+    max-height: 400px;
+    object-fit: cover;
 }
 
+/* Produtos */
 .products {
-    padding: 20px;
+    padding: 2rem 1rem;
+}
+
+.products h2 {
     text-align: center;
-    margin-bottom: 20px;
+    margin-bottom: 2rem;
+    color: #007bff;
 }
 
 .product-grid {
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 .product-card {
     background: white;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    padding: 20px;
-    width: 250px;
-    margin: 10px;
-    text-align: center;
+    border-radius: 10px;
+    padding: 1rem;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    transition: transform 0.3s;
+    display: flex;
+    flex-direction: column;
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
 }
 
 .product-card img {
-    max-width: 100%;
-    height: auto;
+    width: 100%;
+    height: 200px;
+    object-fit: contain;
+    margin-bottom: 1rem;
 }
 
 .product-card button {
-    background-color: #4CAF50;
+    background: #28a745;
     color: white;
     border: none;
-    padding: 10px;
-    cursor: pointer;
+    padding: 0.8rem;
     border-radius: 5px;
+    cursor: pointer;
+    margin-top: auto;
+    transition: background 0.3s;
 }
 
 .product-card button:hover {
-    background-color: #45a049;
+    background: #218838;
 }
 
-.about,
+/* Sobre */
+.about {
+    padding: 2rem 1rem;
+    text-align: center;
+    background: #f8f9fa;
+}
+
+.about h2 {
+    color: #007bff;
+    margin-bottom: 1rem;
+}
+
+/* Contato */
 .contact {
-    padding: 20px;
-    text-align: center;
+    padding: 2rem 1rem;
+    background: #e9ecef;
 }
 
-.contact form {
-    max-width: 400px;
-    margin: 0 auto;
-    text-align: left;
+.title_footer {
+    color: #007bff;
+    font-weight: bold;
+    margin-bottom: 1rem;
 }
 
-.contact form label {
-    display: block;
-    margin-bottom: 5px;
+.contact ul {
+    list-style: none;
 }
 
-.contact form input,
-.contact form textarea {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 10px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
+.contact li {
+    margin-bottom: 0.5rem;
 }
 
-.contact form button {
-    background-color: #4CAF50;
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    cursor: pointer;
-    border-radius: 5px;
+.contact a {
+    color: #333;
+    text-decoration: none;
 }
 
-.contact form button:hover {
-    background-color: #45a049;
+.contact a:hover {
+    color: #007bff;
 }
 
-footer {
-    background-color: #333;
-    color: white;
-    text-align: center;
-    padding: 10px 0;
-    position: relative;
-    bottom: 0;
-    width: 100%;
-}
-
+/* WhatsApp */
 .whatsapp-button {
     position: fixed;
     bottom: 20px;
     right: 20px;
-    z-index: 1000;
-    background-color: #25D366;
-    border-radius: 50%;
     width: 60px;
     height: 60px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.whatsapp-button img {
-    width: 30px;
-    height: 30px;
+    border-radius: 50%;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    transition: transform 0.3s;
 }
 
 .whatsapp-button:hover {
     transform: scale(1.1);
-    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
 }
 
-/* Responsividade */
+.whatsapp-button img {
+    width: 100%;
+    height: auto;
+}
+
+/* Footer */
+footer {
+    background: #007bff;
+    color: white;
+    text-align: center;
+    padding: 1rem;
+    margin-top: 2rem;
+}
+
+/* Media Queries */
 @media (max-width: 768px) {
+    .product-grid {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    }
+
     nav ul {
         flex-direction: column;
-        align-items: center;
+        text-align: center;
     }
 
-    nav ul li {
-        margin: 5px 0;
+    .logo {
+        flex-direction: column;
+        text-align: center;
     }
 
-    .product-card {
-        width: 100%;
-        max-width: 350px;
-    }
-
-    .contact form {
-        width: 90%;
+    .contact .row {
+        flex-direction: column;
+        gap: 2rem;
     }
 }
 
 @media (max-width: 480px) {
-    header {
-        padding: 5px 0;
-    }
-
-    header .logo h1 {
-        font-size: 1.5em;
-    }
-
     .product-card {
         width: 100%;
-        max-width: 300px;
     }
 
-    .contact form {
-        padding: 10px;
+    .whatsapp-button {
+        width: 50px;
+        height: 50px;
+        bottom: 15px;
+        right: 15px;
     }
 }
