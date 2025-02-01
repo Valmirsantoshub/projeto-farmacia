@@ -56,6 +56,10 @@ nav a {
 nav a:hover {
     color: #cce6ff;
 }
+iframe{
+    display:block;
+    margin: 0 auto;
+}
 
 /* Hero */
 .hero img {
@@ -138,16 +142,25 @@ nav a:hover {
     padding: 2rem 1rem;
     background: #e9ecef;
     display: grid;
-    /* grid-template-columns: repeat(3, 1fr); */
+    /* grid-template-columns: repeat(3, 1fr);  */
     gap: 2rem;
+    text-align: center;
+    max-width: 100%;
+    
    
 }
 .contact-container {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(3, 1fr); 
     gap: 2rem;
-    columns: 3;
+    columns: 3; 
+    max-width: 100%;
 }
+.contact-section {
+  
+    max-width: 100%;
+}
+   
 
 .title_footer {
     color: #007bff;
@@ -190,7 +203,7 @@ nav a:hover {
 }
 
 .whatsapp-button img {
-    width: 100%;
+    /* width: 100%; */
     height: auto;
 }
 
@@ -229,6 +242,7 @@ footer {
     .product-card {
         width: 100%;
     }
+    
 
     .whatsapp-button {
         width: 50px;
@@ -237,3 +251,5 @@ footer {
         right: 15px;
     }
 }
+
+   
